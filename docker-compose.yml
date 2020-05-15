@@ -1,10 +1,13 @@
 version: '2'
-services: 
+services:
     web:
         build: .
-        ports: 
+        ports:
             - "5000:5000"
-        depends_on: 
+        volumes:
+            - .:/code
+        depends_on:
             - redis
     redis:
         image: redis
+
